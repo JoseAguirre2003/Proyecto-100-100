@@ -15,6 +15,8 @@ void menuInterce();
 void menuConjunto();
 void menuComplementos();
 void complementoDeConj(int *conj, int size);
+void complementConjRespectoA(int *conj1, int *conj2, int size1, int size2);
+
 
 int main(){
 
@@ -29,7 +31,7 @@ int main(){
 
     rellenarUniverso();
     rellenarConjuntos(); 
-
+    system("cls");
     menuPrincipal();
 
     system("pause");
@@ -111,19 +113,21 @@ void menuPrincipal(){
             menuComplementos();
             break;
         case 4:
-            /* code */
+            system("cls");
+            complementConjRespectoA(conjA, conjB, sizeA, sizeB);
             break;
         case 5:
-            /* code */
+            system("cls");
+            complementConjRespectoA(conjA, conjC, sizeA, sizeC);
             break;
         case 6:
-            /* code */
+            /* Complemento de A en union con B en union con C */
             break;
         case 7:
-            /* code */
+            /* Diferencia simetrica */
             break;
         case 8:
-            /* code */
+            /* FIN */
             break;
         default:
             system("cls");
@@ -221,7 +225,7 @@ void menuInterce(){
     printf("1 - A n B\n");
     printf("2 - A n C\n");
     printf("3 - B n C\n");
-    printf("1 - A n B n C\n");
+    printf("4 - A n B n C\n");
     scanf("%i", &opc);
 
     switch (opc){
@@ -233,6 +237,9 @@ void menuInterce(){
         break;
     case 3:
         interseEntreDosConjuntos(conjB, conjC, sizeB, sizeC);
+        break;
+    case 4:
+        //Interseccion de A n B n C
         break;
     default:
         break;
@@ -294,11 +301,27 @@ void complementoDeConj(int *conj, int size){
     
 }
 
-// void complementConjRespectoA(){
+void complementConjRespectoA(int *conj1, int *conj2, int size1, int size2){
 
-//     int *complementRes;
-//     complementRes = (int*)malloc((tamano) * sizeof(int));
+    int *complementRes;
+    complementRes = (int*)malloc((tamano) * sizeof(int));
+    int k = 0;
+    int encontrado = 0;
 
+    for (int i = 0; i < size1; i++){
+        for (int j = 0; j < size2; j++){
+            if(conj1[i] == conj2[j])
+                encontrado = 1;
+        }
+        if (!encontrado){
+            complementRes[k] = conj1[i];
+            k++;
+        }
+        encontrado = 0;
+    }
+    
+    complementRes = (int*)realloc(complementRes, k*sizeof(int));
 
+    mostrarConjunto(complementRes, k);
 
-// }
+}
