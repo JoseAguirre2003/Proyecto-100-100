@@ -293,3 +293,12 @@ void complementoDeConj(int *conj, int size){
     mostrarConjunto(complemento, k);
     
 }
+
+// void complementConjRespectoA(){
+
+//     int *complementRes;
+//     complementRes = (int*)malloc((tamano) * sizeof(int));
+
+
+
+// }
