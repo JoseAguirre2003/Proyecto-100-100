@@ -17,6 +17,7 @@ void menuConjunto();
 void menuComplementos();
 void complementoDeConj(int *conj, int size);
 void complementConjRespectoA(int *conj1, int *conj2, int size1, int size2);
+void diferenciaSimetrica(int *conj1, int *conj2, int size1, int size2);
 
 
 int main(){
@@ -126,7 +127,7 @@ void menuPrincipal(){
             /* Complemento de A en union con B en union con C */
             break;
         case 7:
-            /* Diferencia simetrica */
+            diferenciaSimetrica(conjA, conjB, sizeA, sizeB);
             break;
         case 8:
             /* FIN */
@@ -333,7 +334,7 @@ void complementConjRespectoA(int *conj1, int *conj2, int size1, int size2){
 
     for (int i = 0; i < size1; i++){
         for (int j = 0; j < size2; j++){
-            if(conj1[i] == conj2[j])
+        if(conj1[i] == conj2[j])
                 encontrado = 1;
         }
         if (!encontrado){
@@ -348,3 +349,27 @@ void complementConjRespectoA(int *conj1, int *conj2, int size1, int size2){
     mostrarConjunto(complementRes, k);
 
 }
+
+void diferenciaSimetrica(int *conj1, int *conj2, int size1, int size2){
+    int tamTemp = size2+size2;
+    int comjTemp[tamTemp];
+    int sizetemp = 0;
+    int encontrado[tamTemp];
+    int k = 0;
+    
+    for(int i = 0; i < size1; i++){
+        comjTemp[i] = conj1[i]
+    }
+    for(int j = i; j < tamTemp; j++){
+        comjTemp[j] = conj2[k];
+        k++;
+    }
+    for(int L = 0; L < tamTemp; L++){
+        for(int m = 0; m < tamTemp; m++){
+            if(comjTemp[L] != comjTemp[m]){
+            encontrado[L]++;
+            R++;
+            }
+        }
+    }
+    
