@@ -1,3 +1,14 @@
+/* Proyecto de Introduccion a la informatica y Logica Computacional
+Informatica - Seccion C - Semestre 1
+Integrantes: 
+Deismar Duran - 24.339.332  
+Maria Pacheco - 30.447.971
+Ronner Vasquez - 29.831.702
+Carlos Rodriguez - 29.795.810
+Jose Aguirre - 30.161.797 */
+
+//Este si es un 100 de 100, a que si? ( ͡° ͜ʖ ͡°)
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,22 +32,17 @@ void diferenciaSimetrica(int *conj1, int *conj2, int size1, int size2);
 void complemetAuBuC();
 
 int main(){
-
     printf("Ingrese la cantidad de numeros para el conjunto universal: ");
     scanf("%i", &tamano);
     fflush(stdin);
-    
     universo = (int*)malloc(tamano * sizeof(int));
     conjA = (int*)malloc(tamano * sizeof(int));
     conjB = (int*)malloc(tamano * sizeof(int));
     conjC = (int*)malloc(tamano * sizeof(int));
-
     rellenarUniverso();
     rellenarConjuntos(); 
     system("cls");
-
     menuPrincipal();
-
     return 0;
 }
 
@@ -231,11 +237,8 @@ void menuConjunto(){
         }
 
     }while(opc < 1 || opc > 3);
-    
-
     system("pause");
     system("cls");
-
 }
 
 void menuInterce(){
@@ -250,7 +253,6 @@ void menuInterce(){
     scanf("%i", &opc);
 
     do{
-
         switch (opc){
         case 1:
             system("cls");
@@ -279,10 +281,8 @@ void menuInterce(){
         }
 
     }while(opc < 1 || opc > 4); 
-
     system("pause");
     system("cls");
-
 }
 
 void menuComplementos(){
@@ -320,10 +320,8 @@ void menuComplementos(){
         }
 
     }while(opc < 1 || opc > 3);
-
     system("pause");
     system("cls");
-
 }
 
 void complementoDeConj(int *conj, int size){
@@ -346,9 +344,7 @@ void complementoDeConj(int *conj, int size){
     }
 
     complemento = (int*)realloc(complemento, k*sizeof(int));
-
-    mostrarConjunto(complemento, k);
-    
+    mostrarConjunto(complemento, k);  
 }
 
 void complementConjRespectoA(int *conj1, int *conj2, int size1, int size2){
@@ -371,9 +367,7 @@ void complementConjRespectoA(int *conj1, int *conj2, int size1, int size2){
     }
     
     complementRes = (int*)realloc(complementRes, k*sizeof(int));
-
     mostrarConjunto(complementRes, k);
-
 }
 
 void diferenciaSimetrica(int *conj1, int *conj2, int size1, int size2){
@@ -408,9 +402,7 @@ void diferenciaSimetrica(int *conj1, int *conj2, int size1, int size2){
     }
 
     difSimetric = (int*)realloc(difSimetric, k*sizeof(int));
-
     mostrarConjunto(difSimetric, k);
-
 }
 
 void complemetAuBuC(){
