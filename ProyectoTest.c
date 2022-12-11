@@ -11,6 +11,7 @@ void rellenarConjuntos();
 void menuPrincipal();
 void mostrarConjunto(int *conj, int size);
 void interceEntreDosConjuntos(int *conj1, int *conj2, int size1, int size2);
+void interseEntrTresConj();
 void menuInterce();
 void menuConjunto();
 void menuComplementos();
@@ -32,6 +33,7 @@ int main(){
     rellenarUniverso();
     rellenarConjuntos(); 
     system("cls");
+
     menuPrincipal();
 
     system("pause");
@@ -185,6 +187,27 @@ void interseEntreDosConjuntos(int *conj1, int *conj2, int size1, int size2){
 
 }
 
+void interseEntrTresConj(){
+
+    int *interseccion3;
+    interseccion3 = (int*)malloc(tamano * sizeof(int));
+    int j = 0;
+
+    for (int i = 0; i < tamano; i++){
+
+        if (universo[i] % 2 == 0 && universo[i] % 3 == 0 && universo[i] % 4 == 0){
+            
+            interseccion3[j] = universo[i];
+            j++;
+
+        }
+
+    }   
+
+    interseccion3 = (int*)realloc(interseccion3, j*sizeof(int));
+    mostrarConjunto(interseccion3, j);
+}
+
 void menuConjunto(){
 
     int opc;
@@ -239,7 +262,7 @@ void menuInterce(){
         interseEntreDosConjuntos(conjB, conjC, sizeB, sizeC);
         break;
     case 4:
-        //Interseccion de A n B n C
+        interseEntrTresConj();
         break;
     default:
         break;
