@@ -355,10 +355,19 @@ void diferenciaSimetrica(int *conj1, int *conj2, int size1, int size2){
     int comjTemp[tamTemp];
     int sizetemp = 0;
     int encontrado[tamTemp];
+    int i = 0;
     int k = 0;
+    int yaPorFavorBastaDeContadores = 0;
+    int *conjResul;
+    conjResul = (int*)malloc((tamTemp) * sizeof(int));
     
-    for(int i = 0; i < size1; i++){
-        comjTemp[i] = conj1[i]
+    
+    for(int h = 0; h < tamTemp; h++ ){
+        encontrado[h] = 0;
+    }
+    
+    for(i < size1; i++;){
+        comjTemp[i] = conj1[i];
     }
     for(int j = i; j < tamTemp; j++){
         comjTemp[j] = conj2[k];
@@ -366,10 +375,19 @@ void diferenciaSimetrica(int *conj1, int *conj2, int size1, int size2){
     }
     for(int L = 0; L < tamTemp; L++){
         for(int m = 0; m < tamTemp; m++){
-            if(comjTemp[L] != comjTemp[m]){
+            if(comjTemp[L] == comjTemp[m]){
             encontrado[L]++;
-            R++;
             }
         }
     }
+    for(int n = 0; n < tamTemp; n++){
+        if(encontrado[n] = 1){
+            conjResul[yaPorFavorBastaDeContadores]=comjTemp[n];
+            yaPorFavorBastaDeContadores++;
+        }
+    }
+    conjResul = (int*)realloc(conjResul, yaPorFavorBastaDeContadores*sizeof(int));
+    
+    mostrarConjunto(conjResul, yaPorFavorBastaDeContadores);
+}
     
