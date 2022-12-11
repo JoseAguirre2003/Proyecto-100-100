@@ -112,24 +112,28 @@ void menuPrincipal(){
             break;
         case 4:
             system("cls");
+            printf("\nEl Conjunto 'A u B u C es:\n");
             complemetAuBuC();
             system("pause");
             system("cls");
             break;
         case 5:
             system("cls");
+            printf("\nEl Conjunto de A - C es:\n");
             complementConjRespectoA(conjA, conjB, sizeA, sizeB);
             system("pause");
             system("cls");
             break;
         case 6:
             system("cls");
+            printf("\nEl Conjunto Complemento de A Respecto a C es:\n");
             complementConjRespectoA(conjA, conjC, sizeA, sizeC);
             system("pause");
             system("cls");
             break;
         case 7:
             system("cls");
+            printf("\nEl Conjunto Diferencia simetrica entre A y B es:\n");
             diferenciaSimetrica(conjA, conjB, sizeA, sizeB);
             system("pause");
             system("cls");
